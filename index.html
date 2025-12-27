@@ -66,6 +66,38 @@ img {
   border-radius: 10px;
   padding: 5px;
 }
+
+number-badge {
+    /* Set equal width and height for a perfect circle */
+    width: 30px;
+    height: 30px;
+    
+    /* Create the rounded corners */
+    border-radius: 50%; /* Makes the element a circle */
+    
+    /* Background color and text styling */
+    background-color: #007bff; /* Example background color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    
+    /* Center the number inside the circle using Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Optional: margin for spacing */
+    margin: 5px;
+    
+    /* Optional: inline-flex is useful if you want the element to sit inline with text */
+    /* display: inline-flex; */
+}
+
+/* Example for a larger badge that adapts to content */
+.number-badge.large {
+    width: auto; /* Allow width to grow with content */
+    padding: 0 10px; /* Add padding instead of fixed width */
+}
   
 </style>
 </head>
@@ -77,16 +109,15 @@ img {
     <th bgcolor="LightSkyBlue">Mock Test Details</th>
     <th bgcolor="LightSkyBlue">Action</th>
   </tr>
-  
   <tr>
-    <td>Malayalam <br> Unit 1 <br> ചിറകു വിരിച്ച് <br>26-12-2025 7PM</td>
+    <td><div class="number-badge">1</div><br>Malayalam <br> Unit 1 <br> ചിറകു വിരിച്ച് <br>26-12-2025 7PM</td>
     <td><button class="button button1"><a href="https://forms.gle/94uYECNo39TTyiHU9">Start Test <i class="fa fa-forward" aria-hidden="true"></i> </a></button>
     <br><button class="button button2"><a href="https://script.google.com/macros/s/AKfycbyciWkbiDKg1G5SSat4_Bmb8sEIsL14GZMMmNWEkAlHFxheihekZ4evHbZfmnOsDkCJ/exec">View Score <i class="fa fa-forward" aria-hidden="true"></i> </a></button></td>
   </tr>
   
   <!--
   <tr>
-    <td>Malayalam <br> Unit 1 <br> ചിറകു വിരിച്ച് <br>26-12-2025 7PM</td>
+    <td>Environmental Studies <br> Unit 1 <br> ജീവികളും ചുറ്റുപാടും <br>28-12-2025 7PM</td>
     <td><button class="button button1"><a href="waitforexam.html">Start Test <i class="fa fa-forward" aria-hidden="true"></i> </a></button>
     <br><button class="button button2"><a href="waitforexam.html">View Score <i class="fa fa-forward" aria-hidden="true"></i> </a></button></td>
   </tr>
