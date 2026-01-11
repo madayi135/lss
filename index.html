@@ -91,7 +91,7 @@ div {
     /* margin: 0 auto; */
 }
 
-p {
+#test-heading {
   color: navy;
   text-indent: 30px;
   text-transform: uppercase;
@@ -101,13 +101,19 @@ p {
   padding: 1em;
 }
 
+#time-heading {
+  color: navy;
+  text-indent: 30px;
+  padding: 1em;
+}
+ 
 </style>
     
 </head>
 <body>
 <img src="lsshead.png" alt="image" class="responsive" style="width:98%">
 
-<p id="demo" style="font-size: 16px; text-align: center;"></p>
+<p id="time-heading" style="font-size: 16px; text-align: center;"></p>
 
 <!-- Adding JavaScript code -->
 <script>
@@ -134,20 +140,20 @@ p {
             (t % (1000 * 60)) / 1000);
 
         // Output the remaining time
-        document.getElementById("demo").innerHTML =
+        document.getElementById("time-heading").innerHTML =
             "Only " + days + "days  " + hours + "h " +
             minutes + "m " + seconds + "s left";
 
         // Output for over time
         if (t < 0) {
             clearInterval(x);
-            document.getElementById("demo")
+            document.getElementById("time-heading")
                 .innerHTML = "EXPIRED";
         }
     }, 1000);
 </script>
   
-<p><b>Latest Tests</b></p>
+<p id="test-heading"><b>Latest Tests</b></p>
 
 <table>
   <tr>
