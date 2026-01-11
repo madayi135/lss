@@ -4,6 +4,53 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* Style for visible text */
+body {
+    text-align: center;
+    background: #00ecb9;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+/* Styling for heading */
+h1 {
+    color: #396;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 40px 0px 20px;
+}
+
+#clockdiv {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv>div {
+    padding: 10px;
+    border-radius: 3px;
+    background: #00bf96;
+    display: inline-block;
+}
+
+#clockdiv div>span {
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816a;
+    display: inline-block;
+}
+
+/* Style for visible text */
+.smalltext {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+/* Style for visible text */
+  
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -101,6 +148,41 @@ p {
 }
 
 </style>
+
+// Getting formated date from date string
+let deadline = new Date("dec 31, 2023 15:37:25").getTime();
+
+// Calling defined function at certain interval
+let x = setInterval(function () {
+  // Getting current date and time in required format
+  let now = new Date().getTime();
+
+  // Calculating difference
+  let t = deadline - now;
+
+  // Getting values of days,hours,minutes, seconds
+  let days = Math.floor(t / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+  // Show the output time
+  document.getElementById("day").innerHTML = days;
+  document.getElementById("hour").innerHTML = hours;
+  document.getElementById("minute").innerHTML = minutes;
+  document.getElementById("second").innerHTML = seconds;
+
+  // Show overtime output
+  if (t < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "TIME UP";
+    document.getElementById("day").innerHTML = "0";
+    document.getElementById("hour").innerHTML = "0";
+    document.getElementById("minute").innerHTML = "0";
+    document.getElementById("second").innerHTML = "0";
+  }
+}, 1000);
+    
 </head>
 <body>
 
