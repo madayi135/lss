@@ -108,7 +108,12 @@ div {
   text-indent: 30px;
   padding: 1em;
 }
- 
+#blink {
+   font-size: 20px;
+   font-weight: bold;
+   font-family: sans-serif;
+}
+
 </style>
     
 </head>
@@ -154,6 +159,16 @@ div {
         }
     }, 1000);
 </script>
+
+ <script type="text/javascript">
+        let blink =
+            document.getElementById('blink');
+
+        setInterval(function () {
+            blink.style.opacity =
+                (blink.style.opacity == 0 ? 1 : 0);
+        }, 1000); 
+    </script>
  
  <!--
 <p id="test-heading"><b>Upcoming Tests</b>
@@ -168,6 +183,7 @@ div {
 &nbsp;
  -->
  
+<p id="blink">
 <p id="test-heading"><b>Upcoming Tests</b>
  &nbsp;
 
@@ -176,6 +192,7 @@ div {
     <td><div>10</div>&nbsp; EVS <br>21-01-2026 7PM</td>
   </tr>
 </table>
+ </p>
  </p>
 &nbsp; 
  
